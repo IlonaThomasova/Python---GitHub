@@ -2,19 +2,15 @@ import json
 with open('Python---GitHub/body.json', encoding ='utf-8') as soubor:
     data=json.load(soubor)
 
-novy_slovnik = data.copy()
+novy_slovnik={}
+for jmeno in data:
+    print(data[jmeno])
+    if data[jmeno]>60:
+        novy_slovnik[jmeno]='Pass'
+    else:
+        novy_slovnik[jmeno]='Fail'
 
-novy_slovnik = dict((key, values) for key, values in novy_slovnik.items() if values >= 60)
-
-for key in novy_slovnik.keys():
-    print(key, ': PASS')
-    
-novy_slovnik = data.copy()
-
-novy_slovnik = dict((key, values) for key, values in novy_slovnik.items() if values < 60)
-
-for key in novy_slovnik.keys():
-    print(key, ': FAIL')
+print(novy_slovnik)
 
 with open("prospech.json", mode="w", encoding="utf-8") as vystupni_soubor:
-    json.dump(data, vystupni_soubor, ensure_ascii=False, indent=4)
+    json.dump(novy_slovnik, vystupni_soubor, ensure_ascii=False, indent=4)
