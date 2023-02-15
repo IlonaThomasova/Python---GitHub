@@ -6,9 +6,9 @@ novy_slovnik={}
 for jmeno in data:
     print(data[jmeno])
     if data[jmeno]>60:
-        novy_slovnik[jmeno]='Pass'
+        [jmeno]='Pass'
     else:
-        novy_slovnik[jmeno]='Fail'
+        [jmeno]='Fail'
 
 print(novy_slovnik)
 
