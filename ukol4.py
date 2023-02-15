@@ -1,16 +1,32 @@
-import json
-with open('Python---GitHub/body.json', encoding ='utf-8') as soubor:
-    data=json.load(soubor)
+vstup1= input("Zadej na jaké telefonní číslo se má zaslat zpráva: ")
 
-novy_slovnik={}
-for jmeno in data:
-    print(data[jmeno])
-    if data[jmeno]>60:
-        novy_slovnik[jmeno]='Pass'
+pomocna_promenna1=vstup1[0:4]
+
+pomocna_promenna2='+420'
+
+def funkce1():
+    
+    if ((len(vstup1)==9) or ((len(vstup1)==13) and (pomocna_promenna2==pomocna_promenna1))):
+        
+        print('True') 
+    
     else:
-        novy_slovnik[jmeno]='Fail'
+        print('Telefonní číslo je špatně zadané.')
+        quit()
 
-print(novy_slovnik)
+funkce1()
 
-with open("prospech.json", mode="w", encoding="utf-8") as vystupni_soubor:
-    json.dump(novy_slovnik, vystupni_soubor, ensure_ascii=False, indent=4)
+vstup2= input("Zadej text zprávy: ")
+
+def funkce2():
+    
+    pocet=0
+    for i in vstup2:
+        pocet+=1 
+    if pocet<=180:
+        print("Cena SMS je 3 Kč")
+    if pocet>180:    
+        pomocna_promenna3 = pocet//180
+        print("Cena SMS je ",3*pomocna_promenna3," Kč.")
+    
+funkce2()
