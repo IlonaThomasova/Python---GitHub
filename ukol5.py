@@ -19,6 +19,4 @@ print(ranni)
 nocni = [teplota[3] for teplota in teploty]
 print(nocni)
 
-poledni_nocni=[teplota.pop(2) for teplota in teploty]
-poledni_nocni=[teplota[1:4]for teplota in teploty]
-print(poledni_nocni)
+print([f'{jmeno[1]},{jmeno[3]}'for jmeno in teploty])
